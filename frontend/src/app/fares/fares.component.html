@@ -1,0 +1,57 @@
+<div class="py-5 text-center">
+  <h2>Fares</h2>
+  <p class="lead">Chose the origin and destination airports</p>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <form class="needs-validation" novalidate [formGroup]="faresForm">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Origin airport</label>
+          <p-autoComplete formControlName="originAirport" [suggestions]="originAirportsResults"
+                          (completeMethod)="searchOriginAirports($event)" field="description"
+                          [forceSelection]="true"></p-autoComplete>
+
+          <div class="invalid-feedback">
+            Valid origin airport is required.
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Destination airport</label>
+          <p-autoComplete formControlName="destinationAirport" [suggestions]="destinationAirportsResults"
+                          (completeMethod)="searchDestinationAirports($event)" field="description"
+                          [forceSelection]="true"></p-autoComplete>
+          <div class="invalid-feedback">
+            Valid destination airport is required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 ">
+          <button class="btn btn-primary btn-lg btn-block" (click)="calculateFare()"
+                  [disabled]="!faresForm.get('originAirport').value || !faresForm.get('destinationAirport').value">
+            Calculate Fare
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <hr class="mb-4">
+
+
+    <h4 class="mb-3">Fare</h4>
+
+    <div *ngIf="fare" class="d-block my-3">
+      <div class="row">
+        <div class="col-md-12"><strong>Price:</strong> {{fare.amount}} {{fare.currency}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"><strong>Origin Airport:</strong> {{fare.originAirport.description}}</div>
+        <div class="col-md-6"><strong>Destination Airport:</strong> {{fare.destinationAirport.description}}</div>
+      </div>
+    </div>
+    <hr class="mb-4">
+
+
+  </div>
+</div>

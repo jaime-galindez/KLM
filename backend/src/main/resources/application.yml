@@ -1,0 +1,24 @@
+server:
+    port: 8888
+api:
+  statistics:
+    name: fares
+    pattern-match: /api/.*
+    publish-url: https://demo.grokola.com/sherpa/api/stats/41
+    token: 6e8f1cc6-3c53-4ebe-b496-53f19fb7e10e
+klm:
+  config:
+    oauth:
+      clientId: travel-api-client
+      clientSecret: psw
+      accessTokenUrl: http://localhost:8080/oauth/token
+      grantType: client_credentials
+      scopes: read,write
+    async:
+      corePoolSize: 2
+      maxPoolSize: 2
+      queueCapacity: 500
+      threadNamePrefix: async-task-
+    endPoints:
+      airports: http://localhost:8080/airports/
+      fares: http://localhost:8080/fares/

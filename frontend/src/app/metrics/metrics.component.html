@@ -1,0 +1,47 @@
+<div class="py-5 text-center">
+  <h2>Metrics</h2>
+  <p class="lead">Statistics of the usage of the API</p>
+</div>
+<div class="row">
+  <div class="col-md-12">
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Key</th>
+        <th scope="col">Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">Total number of requests</th>
+        <td>{{metrics?.totalNumberOfRequests}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Total number of 200 requests</th>
+        <td>{{metrics?.totalNumberOf200Requests}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Total number of 4xx requests</th>
+        <td>{{metrics?.totalNumberOf4xxRequests}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Total number of 5xx requests</th>
+        <td>{{metrics?.totalNumberOf5xxRequests}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Average response time</th>
+        <td>{{metrics?.averageResponseTime / 1000000000 | number:'1.5-5'}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Max response time</th>
+        <td>{{metrics?.maxResponseTime / 1000000000 | number:'1.5-5'}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Min response time</th>
+        <td>{{metrics?.minResponseTime / 1000000000 | number:'1.5-5'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
