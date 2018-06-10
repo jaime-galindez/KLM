@@ -2,11 +2,13 @@
 
 The project uses maven as build tool.
 
-It's a multimodule project, with the parent pom as parent moduile, froenend for the angular part and backend for the backend.
+It's a multimodule project, with the parent pom as parent moduile, frontend for the angular part and backend for the backend.
 
-The different modules can be built separately, backend will include the smodule froentend and will serve the pages of the module
+A previous step to have the project working is needed. Go to frontend folder with the command line and run npm install to download all the angular dependencies
 
-to build the full module run: mvn clean install and to tun it, go to backend/target and run java -jar backend-0.0.1-SNAPSHOT.jar
+The different modules can be built separately, backend will include the module frontend and will serve the pages of the module
+
+To build the full module run: mvn clean install and to tun it, go to backend/target and run java -jar backend-0.0.1-SNAPSHOT.jar
 
 To access the application go to http://localhost:8888
 
